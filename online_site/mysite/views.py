@@ -1,5 +1,3 @@
-from http import HTTPMethod
-
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework import viewsets,generics,status,permissions
@@ -99,11 +97,11 @@ class ClothesReviewDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ClothesDetailReviewSerializers
 
 
-class CartViewSet(viewsets.ModelViewSet):
+class CartViewSet(generics.ListAPIView):
     queryset = Cart.objects.all()
     serializer_class = CartSerializers
 
 
-class CartIemViewSet(viewsets.ModelViewSet):
+class CartIemViewSet(generics.RetrieveAPIView):
     queryset = CartItem.objects.all()
     serializer_class =CartItemSerializers

@@ -4,8 +4,6 @@ from django.urls import  path,include
 
 
 router = routers.SimpleRouter()
-router.register(r'cart',CartViewSet,basename='cart')
-router.register(r'cart_item',CartIemViewSet,basename='cart_item')
 
 
 
@@ -29,5 +27,8 @@ urlpatterns = [
 
     path('clothes_review/', ClothesReviewListAPIView.as_view(), name='clothes_review_list'),
     path('clothes_review/<int:pk>/', ClothesReviewDetailAPIView.as_view(), name='clothes_review_detail'),
+
+    path('cart/', CartListAPIView.as_view(), name='clothes_review_list'),
+    path('cartitem/<int:pk>/', CartIemListAPIView.as_view(), name='clothes_review_detail'),
 ]
 

@@ -97,11 +97,11 @@ class ClothesReviewDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ClothesDetailReviewSerializers
 
 
-class CartViewSet(generics.ListAPIView):
+class CartListAPIView(generics.ListAPIView):
     queryset = Cart.objects.all()
     serializer_class = CartSerializers
 
 
-class CartIemViewSet(generics.RetrieveAPIView):
+class CartIemListAPIView(generics.ListCreateAPIView):
     queryset = CartItem.objects.all()
     serializer_class =CartItemSerializers
